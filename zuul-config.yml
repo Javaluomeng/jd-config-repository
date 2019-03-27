@@ -1,0 +1,44 @@
+spring:
+  profiles:
+    active: -dev
+---
+server:
+  port: 1299
+spring:
+  application:
+    name: MICROSERVICE-ZUUL
+  profiles: dev
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka
+  instance:
+    instance-id: localhost:1299
+    prefer-ip-address: true
+zuul:
+  prefix: "/luo"
+  ignored-services: "*"
+  routes:
+    sbUser.serviceId: plat-service
+    sbUser.path: /sbUser/**
+---
+server:
+  port: 1300
+spring:
+  application:
+    name: MICROSERVICE-ZUUL-TEST
+  profiles: test
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka
+  instance:
+    instance-id: localhost:1299
+    prefer-ip-address: true
+zuul:
+  prefix: "/luo"
+  ignored-services: "*"
+  routes:
+    sbUser.serviceId: plat-service
+    sbUser.path: /sbUser/**
+---
