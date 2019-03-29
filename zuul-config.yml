@@ -20,7 +20,7 @@ zuul:
   ignored-services: "*"
   routes:
     sbUser.serviceId: plat-service
-    sbUser.path: /sbUser/**
+    sbUser.path: /plat/**
 ---
 server:
   port: 1300
