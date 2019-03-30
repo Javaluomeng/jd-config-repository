@@ -21,6 +21,8 @@ zuul:
   routes:
     sbUser.serviceId: plat-service
     sbUser.path: /plat/**
+    productUser.serviceId: prodct-service
+    productUser.path: /product/**
 ---
 server:
   port: 1300
@@ -41,4 +43,6 @@ zuul:
   routes:
     sbUser.serviceId: plat-service
     sbUser.path: /sbUser/**
+    productUser.serviceId: prodct-service
+    productUser.path: /product/**
 ---
