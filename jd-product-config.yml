@@ -21,7 +21,7 @@ eureka:
     prefer-ip-address: true
 mybatis-plus:
   mapper-locations: classpath:cn/luomengde/jd/mapper/*Mapper.xml
-  type-aliases-package: cn.luomengde.jd.domain
+  type-aliases-package: cn.luomengde.jd.domain,cn.luomengde.jd.query
 ---
 server:
   port: 8003
@@ -42,4 +42,4 @@ eureka:
     prefer-ip-address: true
 mybatis-plus:
   mapper-locations: classpath:cn/luomengde/jd/mapper/*Mapper.xml
-  type-aliases-package: cn.luomengde.jd.domain
+  type-aliases-package: cn.luomengde.jd.domain,cn.luomengde.jd.query
