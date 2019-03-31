@@ -24,8 +24,15 @@ zuul:
     productUser.serviceId: product-service
     productUser.path: /product/**
   host:
-    socket-timeout-millis: 2000
-    connect-timeout-millis: 4000
+    connect-timeout-millis: 10000
+    socket-timeout-millis: 60000
+hystrix:
+    command:
+        default:
+            execution:
+                isolation:
+                    thread:
+                        timeoutInMilliseconds: 60000
 ---
 server:
   port: 1300
